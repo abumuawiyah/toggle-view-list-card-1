@@ -1,0 +1,28 @@
+<button (click)="changeMode()">change mode</button>
+<!--card view-->
+<card-or-list-view [items]="items" [mode]="mode">
+<ng-template cardItem>
+  <div *ngFor="let item of items">
+    <div class="box">
+      <h1>{{item.header}}</h1>
+      <p>{{item.content}}</p>
+    </div>
+  </div>
+</ng-template>
+  
+  <!--table view-->
+<div >
+  <ng-template listItem>
+    <table *ngFor="let item of items">
+      <tr>
+        <th>header</th>
+        <th>header2</th>
+      </tr>
+      <tr>  
+        <td>{{item.content}} </td>
+        <td>{{item.content}}</td>
+      </tr>
+     </table>
+</ng-template>
+</div>
+</card-or-list-view>
